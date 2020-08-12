@@ -32,7 +32,7 @@
             <ProgressBar Orientation="Vertical" Value="25" />
         </smtx:XamlDisplay>
         <smtx:XamlDisplay Key="progress_2" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="24">
-            <ProgressBar Orientation="Vertical" Height="10" IsIndeterminate="True" />
+            <ProgressBar Orientation="Vertical" Height="10" materialDesign:ProgressBarAssist.IsIndeterminate="True" />
         </smtx:XamlDisplay>
         <StackPanel Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch">
             <smtx:XamlDisplay Key="progress_3" Margin="24">
@@ -49,7 +49,7 @@
             </smtx:XamlDisplay>
 
             <smtx:XamlDisplay Key="progress_6" Margin="24">
-                <ProgressBar IsIndeterminate="True" />
+                <ProgressBar materialDesign:ProgressBarAssist.IsIndeterminate="True" />
             </smtx:XamlDisplay>
         </StackPanel>
 
@@ -73,7 +73,7 @@
                        Margin="0 0 0 16">
                 No extra control is required for the circular style, it is purely a standard ProgressBar, with the MaterialDesignCircularProgressBar style applied.
             </TextBlock>
-
+<!--
             <smtx:XamlDisplay Key="progress_7" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="12">
                 <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" 
                              x:Name="DeterminateCircularProgress"/>
@@ -182,12 +182,14 @@
                 </materialDesign:Card>
             </smtx:XamlDisplay>
             <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap">Apply some animations to the card to get funky!</TextBlock>
+-->
         </Grid>
     </Grid>
 
     <!--    these animations are used to control the circular progress bars' values, so we don't need 
             code-behind or a view model to illustrate them in action 
     -->
+<!--
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <EventTrigger.Actions>
@@ -219,18 +221,18 @@
                         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Value">
                             <DiscreteDoubleKeyFrame Value="0" KeyTime="0"/>
                             <DiscreteDoubleKeyFrame Value="1" KeyTime="0:0:0.1"/>
-                            <!-- we have used a 20% startup to fade in on the actual control -->
+                            <!-\- we have used a 20% startup to fade in on the actual control -\->
                             <DiscreteDoubleKeyFrame Value="20" KeyTime="0:0:1"/>
-                            <!-- pretend we are indeterminate for 4 seconds -->
+                            <!-\- pretend we are indeterminate for 4 seconds -\->
                             <DiscreteDoubleKeyFrame Value="20" KeyTime="0:0:4"/>
-                            <!-- now we become determinate and complete to 100% -->
+                            <!-\- now we become determinate and complete to 100% -\->
                             <SplineDoubleKeyFrame Value="100" KeyTime="0:0:8"/>
                             <SplineDoubleKeyFrame Value="100" KeyTime="0:0:9"/>
                         </DoubleAnimationUsingKeyFrames>
                         <BooleanAnimationUsingKeyFrames  Storyboard.TargetProperty="IsIndeterminate" Duration="0:0:10">
                             <DiscreteBooleanKeyFrame Value="True" KeyTime="0:0:0.1" />
                             <DiscreteBooleanKeyFrame Value="True" KeyTime="0:0:3.9" />
-                            <!-- now we become determinate and complete to 100% -->
+                            <!-\- now we become determinate and complete to 100% -\->
                             <DiscreteBooleanKeyFrame Value="False" KeyTime="0:0:4" />
                         </BooleanAnimationUsingKeyFrames>
                     </Storyboard>
@@ -238,5 +240,6 @@
             </EventTrigger.Actions>
         </EventTrigger>
     </UserControl.Triggers>
+-->
 </UserControl>
 
